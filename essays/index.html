@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The journey - Ammar Shaikh</title>
+    <style>
+        /* Add CSS Variables for theming */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333;
+            --link-color: #333;
+            --link-hover-color: #666;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #c0c0c0;
+            --link-color: #aaaaaa;
+            --link-hover-color: #ffffff;
+        }
+
+        body {
+            font-family: 'Fira Mono', monospace;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Theme toggle button */
+        .theme-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid var(--text-color);
+            background: var(--bg-color);
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .theme-switch:hover {
+            background: var(--link-color);
+            color: var(--bg-color);
+        }
+
+        /* Update link colors to use variables */
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: var(--link-hover-color);
+            text-decoration: underline;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Add theme switch button -->
+    <button class="theme-switch" aria-label="Toggle dark mode">🌓</button>
+    
+    <h1>The journey</h1>
+    
+    <ul>
+        <li><a href="./time-well-spent.html">Of a Time Well Spent</a></li>
+        <!-- Add more essays as needed -->
+    </ul>
+
+    <!-- Add script at the end of body -->
+    <script>
+        // Dark mode functionality
+        const themeSwitch = document.querySelector('.theme-switch');
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+
+        themeSwitch.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+</html>

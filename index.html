@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ammar</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fira+Mono:wght@400;500;700&family=Permanent+Marker&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* CSS Variables for theming */
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #666666;
+      /* Lighter text color */
+      --heading-color: #444444;
+      /* Softer heading color */
+      --border-color: #dddddd;
+      /* Softer border */
+      --link-color: #888888;
+      /* Lighter link color */
+      --link-hover-color: #333333;
+      /* Darker hover color */
+    }
+
+    /* Dark theme variables */
+    [data-theme="dark"] {
+      --bg-color: #1a1a1a;
+      --text-color: #c0c0c0;
+      /* Lightened text color for dark mode */
+      --heading-color: #ffffff;
+      --border-color: #333333;
+      --link-color: #aaaaaa;
+      --link-hover-color: #ffffff;
+    }
+
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Fira Mono', monospace;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Header styles */
+    header {
+      margin-bottom: 40px;
+      padding: 20px 0;
+      border-bottom: 2px solid var(--border-color);
+      max-width: none;
+      width: 100%;
+      margin: 0;
+    }
+
+    h1 {
+      font-family: 'Permanent Marker', cursive;
+      /* Headings in Permanent Marker */
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: var(--heading-color);
+    }
+
+    /* Theme toggle button */
+    .theme-switch {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-color);
+      color: var(--text-color);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .theme-switch:hover {
+      background: var(--link-color);
+      color: var(--bg-color);
+    }
+
+    /* Navigation styles */
+    nav {
+      margin: 20px 0;
+    }
+
+    nav a {
+      color: var(--link-color);
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--link-hover-color);
+    }
+
+    /* Main content styles */
+    main {
+      margin: 40px 0;
+      max-width: none;
+      width: 100%;
+      margin: 0;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-family: 'Comic Neue', sans-serif;
+      /* Subheadings in Comic Neue */
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: var(--heading-color);
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+
+    /* Style for links inside paragraphs */
+    p a {
+      color: var(--link-color);
+      /* Use link color for light/dark mode */
+      text-decoration: underline;
+      /* Add underline for emphasis in paragraphs */
+      font-weight: 400;
+      /* Normal font weight */
+      transition: color 0.3s;
+      /* Smooth transition for color changes */
+    }
+
+    /* Hover effect for links inside paragraphs */
+    p a:hover {
+      color: var(--link-hover-color);
+      /* Changes color on hover */
+    }
+
+
+    /* Contact section */
+    .social-links a {
+      color: var(--link-color);
+      text-decoration: none;
+      margin-right: 15px;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--link-hover-color);
+    }
+
+    /* Responsive design */
+    @media (max-width: 600px) {
+      body {
+        padding: 15px 20px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .theme-switch {
+        top: 10px;
+        right: 10px;
+      }
+    }
+
+    /* Add these new styles */
+    .layout-container {
+      display: flex;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      gap: 40px;
+      padding: 0;
+    }
+
+    .sidebar {
+      width: 300px;
+      flex-shrink: 0;
+      padding: 20px;
+      background-color: var(--bg-color);
+      border-right: 1px solid var(--border-color);
+    }
+
+    .main-content {
+      flex: 1;
+      min-width: 0;
+      padding: 0 40px;
+    }
+
+    /* Adjust profile image size for smaller sidebar */
+    .profile-image {
+      width: 100%;
+      max-width: 180px;  /* Reduced from 200px to fit smaller sidebar */
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* Sidebar navigation styles */
+    .sidebar-nav {
+      margin-top: 30px;  /* Space after profile section */
+    }
+
+    .nav-links {
+      list-style: none;  /* Remove bullet points */
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links li {
+      margin-bottom: 15px;  /* Space between links */
+    }
+
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: color 0.3s ease;
+      display: block;
+      padding: 5px 0;
+    }
+
+    .nav-links a:hover {
+      color: var(--link-hover-color);
+    }
+
+    /* Optional: Add an active state for the current page */
+    .nav-links a.active {
+      color: var(--link-hover-color);
+      font-weight: 500;
+    }
+
+    /* Add these to your existing CSS */
+    .essays-list {
+        margin-top: 40px;
+    }
+
+    .essay-preview {
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .essay-preview h2 {
+        margin-bottom: 10px;
+    }
+
+    .essay-preview h2 a {
+        color: var(--heading-color);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .essay-preview h2 a:hover {
+        color: var(--link-hover-color);
+    }
+
+    .date {
+        color: var(--text-color);
+        font-size: 0.9em;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .preview-text {
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="theme-switch" aria-label="Toggle dark mode">🌓</button>
+  
+  <!-- Add sidebar -->
+  <div class="layout-container">
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="images/profile.jpg" alt="Ammar Shaikh" class="profile-image">
+        <div class="profile-bio">
+          <p><i>Endlessly curious, often wandering, always learning</i></p>
+        </div>
+      </div>
+      
+      <!-- Add navigation menu -->
+      <nav class="sidebar-nav">
+        <ul class="nav-links">
+          <li><a href="./essays/index.html">The journey</a></li>
+          <li><a href="./projects/index.html">Projects</a></li>
+          <li><a href="./contact/index.html">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Wrap existing content in main-content div -->
+    <div class="main-content">
+      <header>
+        <h1>Ammar Shaikh</h1>
+        <p style="font-size: 0.9em;"><i>Just a place to unscramble my thoughts</i></p>
+        <br>
+        <p> I'm Ammar Shaikh, a 23 year old from Mumbai. </p>
+        <p>I enjoy thinking and working on challenging problems.</p>
+        <p> I used to be quite active in competitive programming. You can find my profiles on here:</p>
+        <p> <a href="https://codeforces.com/profile/ammar_shaikh">Codeforces</a> </p>
+        <p> <a href="https://www.codechef.com/users/ammar_codechef">Codechef</a> </p>
+        <p> <a href="https://www.leetcode.com/ammar1510">Leetcode</a> </p>
+        <p><a href="https://atcoder.jp/users/Ammar1510">Atcoder</a></p>
+        <p> These days I spend my time researching reinforcement learning.</p>
+        <nav>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section id="projects">
+          <h2>Projects I'm currently working on...</h2>
+          <p>Applying RL to achieve superhuman performance in Diplomacy</p>
+          <p>Exploring dynamic sampling to improve LLM
+            outputs - <a href="https://github.com/xjdr-alt/entropix">Entropix </a></p>
+        </section>
+
+        <section id="contact">
+          <h2>Contact</h2>
+          <p>I'll be active on here.</p>
+          <div class="social-links">
+            <a href="ammarshaikh1510@gmail.com">Email</a>
+            <a href="https://linkedin.com/in/ammarshaikh7" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/ammar1510" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // Dark mode functionality
+    const themeSwitch = document.querySelector('.theme-switch');
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    themeSwitch.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+  </script>
+</body>
+
+</html>
