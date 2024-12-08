@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Ammar Shaikh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fira+Mono:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <!-- Link to your shared CSS file -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="layout-container">
+        <!-- Copy your sidebar from main index.html -->
+        <aside class="sidebar">
+            <!-- Sidebar content -->
+        </aside>
+
+        <div class="main-content">
+            <header>
+                <h1>Projects</h1>
+                <p style="font-size: 0.9em;"><i>A collection of things I've built</i></p>
+            </header>
+
+            <main>
+                <div class="project-card">
+                    <h2 class="project-title">MinOS</h2>
+                    <span class="project-tech">C</span>
+                    <span class="project-tech">Assembly</span>
+                    <span class="project-tech">Operating Systems</span>
+                    
+                    <div class="project-description">
+                        <p>A minimalistic operating system built from scratch, focusing on core OS concepts and bare metal programming.</p>
+                        
+                        <h3>Key Components:</h3>
+                        <ul class="component-list">
+                            <li><strong>Bootloader:</strong> Custom two-stage bootloader handling system initialization and kernel loading</li>
+                            <li><strong>Memory Management:</strong> Implementation of paging, virtual memory system, and basic memory allocator</li>
+                            <li><strong>Process Management:</strong> Basic process scheduling and context switching</li>
+                            <li><strong>Interrupt Handling:</strong> Custom IDT (Interrupt Descriptor Table) and ISR (Interrupt Service Routines)</li>
+                            <li><strong>Device Drivers:</strong> Basic drivers for keyboard, display, and timer</li>
+                            <li><strong>File System:</strong> Simple file system implementation for basic storage operations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h2 class="project-title">BitTorrent Client</h2>
+                    <span class="project-tech">P2P</span>
+                    <span class="project-tech">Kademlia</span>
+                    <span class="project-tech">Networking</span>
+                    
+                    <div class="project-description">
+                        <p>A pure peer-to-peer BitTorrent client implementation with distributed hash table (DHT) based on the Kademlia protocol.</p>
+                        
+                        <h3>Key Components:</h3>
+                        <ul class="component-list">
+                            <li><strong>Kademlia DHT:</strong> Implementation of distributed hash table for peer discovery and network organization</li>
+                            <li><strong>P2P Protocol:</strong> Pure peer-to-peer architecture without central trackers</li>
+                            <li><strong>Node Management:</strong> K-bucket implementation for efficient peer routing and lookup</li>
+                            <li><strong>File Handling:</strong> Piece management, verification, and parallel downloading</li>
+                            <li><strong>Network Layer:</strong> UDP for DHT operations, TCP for peer data transfer</li>
+                            <li><strong>BitTorrent Protocol:</strong> Support for standard BitTorrent protocol messages and extensions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h2 class="project-title">AlphaGomoku</h2>
+                    <span class="project-tech">Deep RL</span>
+                    <span class="project-tech">PyTorch</span>
+                    <span class="project-tech">MCTS</span>
+                    <span class="project-tech">Neural Networks</span>
+                    
+                    <div class="project-description">
+                        <p>A deep reinforcement learning system designed to master the game of Gomoku (Five in a Row), inspired by DeepMind's AlphaGo architecture.</p>
+                        
+                        <h3>Key Components:</h3>
+                        <ul class="component-list">
+                            <li><strong>Neural Network Architecture:</strong> Dual policy and value networks for move prediction and position evaluation</li>
+                            <li><strong>Monte Carlo Tree Search:</strong> Advanced MCTS implementation guided by neural networks</li>
+                            <li><strong>Self-Play Training:</strong> Iterative self-play mechanism for continuous improvement</li>
+                            <li><strong>Policy Optimization:</strong> Implementation of policy gradient methods with value bootstrapping</li>
+                            <li><strong>Distributed Training:</strong> Parallel self-play and network training pipeline</li>
+                            <li><strong>Position Evaluation:</strong> Board state evaluation using convolutional networks</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Link to your shared JavaScript file -->
+    <script src="../script.js"></script>
+</body>
+</html>

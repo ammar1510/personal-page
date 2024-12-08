@@ -4,96 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The journey - Ammar Shaikh</title>
+    
+    <!-- Add the same font imports as your homepage -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fira+Mono:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    
+    <!-- Link to your shared CSS file -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Add specific styles for this page -->
     <style>
-        /* Add CSS Variables for theming */
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #333;
-            --link-color: #333;
-            --link-hover-color: #666;
-        }
-
-        [data-theme="dark"] {
-            --bg-color: #1a1a1a;
-            --text-color: #c0c0c0;
-            --link-color: #aaaaaa;
-            --link-hover-color: #ffffff;
-        }
-
-        body {
-            font-family: 'Fira Mono', monospace;
+        .main-content {
             max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-            line-height: 1.6;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: background-color 0.3s, color 0.3s;
+            margin: 0;
+            padding: 40px 80px;  /* Increased left padding to move content away from the edge */
         }
 
-        /* Theme toggle button */
-        .theme-switch {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid var(--text-color);
-            background: var(--bg-color);
-            color: var(--text-color);
-            cursor: pointer;
-            transition: all 0.3s;
+        h1 {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: var(--heading-color);
         }
 
-        .theme-switch:hover {
-            background: var(--link-color);
-            color: var(--bg-color);
-        }
-
-        /* Update link colors to use variables */
-        a {
+        .essay-link {
+            font-family: 'Fira Mono', monospace;
             color: var(--link-color);
             text-decoration: none;
+            transition: color 0.3s;
         }
-        
-        a:hover {
+
+        .essay-link:hover {
             color: var(--link-hover-color);
-            text-decoration: underline;
         }
-        
+
         ul {
-            padding-left: 20px;
+            list-style: none;
+            padding: 0;
         }
-        
+
         li {
-            margin: 10px 0;
+            margin: 15px 0;
         }
     </style>
 </head>
 <body>
-    <!-- Add theme switch button -->
-    <button class="theme-switch" aria-label="Toggle dark mode">🌓</button>
+    <label class="theme-switch" aria-label="Toggle dark mode">
+        <input type="checkbox" class="theme-switch-input">
+        <span class="slider round"></span>
+    </label>
     
-    <h1>The journey</h1>
-    
-    <ul>
-        <li><a href="./time-well-spent.html">Of a Time Well Spent</a></li>
-        <!-- Add more essays as needed -->
-    </ul>
+    <div class="main-content">
+        <h1>The journey</h1>
+        
+        <ul>
+            <li><a href="./time-well-spent.html" class="essay-link">Of a Time Well Spent</a></li>
+            <!-- Add more essays as needed -->
+        </ul>
+    </div>
 
-    <!-- Add script at the end of body -->
-    <script>
-        // Dark mode functionality
-        const themeSwitch = document.querySelector('.theme-switch');
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-
-        themeSwitch.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-    </script>
+    <!-- Link to your shared JavaScript file -->
+    <script src="../script.js"></script>
 </body>
 </html>
