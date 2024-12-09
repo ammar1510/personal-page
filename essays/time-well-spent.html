@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Of a Time Well Spent - Ammar Shaikh</title>
+    
+    <!-- Add the same font imports as your homepage -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fira+Mono:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    
+    <!-- Link to your shared CSS file -->
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        // Check for saved theme preference immediately
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+    <!-- Add specific styles for this page -->
+    <style>
+        .main-content {
+            max-width: 70%;  /* Increased from 800px to utilize more width */
+            margin: 0 auto;
+            padding: 40px 40px;  /* Adjusted padding */
+        }
+
+        h1 {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: var(--heading-color);
+        }
+
+        p {
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+        .quote {
+            font-family: 'Comic Neue', cursive;
+            font-size: 1em;
+            color: var(--text-color);
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <label class="theme-switch" aria-label="Toggle dark mode">
+        <input type="checkbox" class="theme-switch-input">
+        <span class="slider round"></span>
+    </label>
+    
+    <div class="main-content">
+        <h1>A time Well Spent</h1>
+        
+        <p>
+            Records survive relating to William Shakespeare’s family that offer an understanding of the context of Shakespeare's early life and the lives of his family members. John Shakespeare married Mary Arden, and together they had eight children. John and Mary lost two daughters as infants, so William became their eldest child. John Shakespeare worked as a glove-maker, but he also became an important figure in the town of Stratford by fulfilling civic positions. His elevated status meant that he was even more likely to have sent his children, including William, to the local grammar school. 
+        </p>
+    </div>
+
+    <!-- Link to your shared JavaScript file -->
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -12,7 +12,13 @@
     
     <!-- Link to your shared CSS file -->
     <link rel="stylesheet" href="../styles.css">
-
+    <script>
+        // Check for saved theme preference immediately
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+      </script>
     <!-- Add specific styles for this page -->
     <style>
         .main-content {
