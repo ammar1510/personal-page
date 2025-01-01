@@ -211,7 +211,6 @@ p a:hover {
   flex-shrink: 0;
   padding: 20px;
   background-color: var(--bg-color);
-  border-right: 1px solid var(--border-color);
 }
 
 .main-content {
@@ -346,4 +345,28 @@ p a:hover {
 .component-list li {
     margin-bottom: 8px;
     color: var(--text-color);
+}
+
+.contact-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.contact-icons {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.contact-icons a {
+    font-size: 2rem;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.contact-icons a:hover {
+    color: var(--link-hover-color);
 }

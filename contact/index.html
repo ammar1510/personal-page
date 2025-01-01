@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Ammar Shaikh</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fira+Mono:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+    
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        .contact-icons {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-icons a {
+            font-size: 2rem;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+        
+        .contact-icons a:hover {
+            color: var(--link-hover-color);
+        }
+    </style>
+</head>
+<body>
+    <label class="theme-switch" aria-label="Toggle dark mode">
+        <input type="checkbox" class="theme-switch-input">
+        <span class="slider round"></span>
+    </label>
+
+    <div class="main-content">
+        <h1>Contact</h1>
+        
+        <div class="contact-icons">
+            <a href="mailto:ammarshaikh1510@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/ammar1510" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ammarshaikh7/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html> 
